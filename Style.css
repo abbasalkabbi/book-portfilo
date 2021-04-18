@@ -1,0 +1,248 @@
+*{
+    padding: 0;margin: 0;box-sizing: border-box;
+}
+*::selection{
+    background-color: red;
+    color: #000;
+}
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+body{
+    perspective: 1000px;
+}
+.content-on{
+    display: block;
+}
+.content-off{
+    display: none;
+}
+.container{
+    width: 1200px;height: 100vh;
+    margin: auto;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+/*Start Style for div front end book*/
+.frontend{
+    margin:10px auto;
+    width:512px; height: 647px;
+    background-color: black;
+    transition: all 5s ;
+    position:absolute;
+
+    /*transform: translateX(-50%) rotateY(-180deg);*/
+  
+}
+
+.frontend .content-on header{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frontend  .content-on header h1{
+    color: #b3b3b3;
+    font-size: 40px;
+    font-family: 'RocknRoll One', sans-serif;
+    z-index: 3;
+    
+}
+/*anim for h1 */
+.frontend .content-on header .namejob{
+    z-index: 3;
+    width: fit-content;
+    position: relative;
+}
+.frontend .content-on header .namejob::before{
+   content: "";
+   width: 100%;
+   height: 100%;
+   background-color: blue;
+   z-index:-1 ;
+   top: 0;left: 0;right: 0;bottom: 0;
+   position:absolute;
+   display: block; 
+   transform: scaleX(0);
+   transition: transform .3s ease;
+   transform-origin: bottom right;
+}
+.frontend .content-on header .namejob:hover:before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.frontend .content-on .image{
+    width: 100%;height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.frontend .content-on .image img{
+    width: 75%;
+    border-radius: 50%;
+    border: red 2px solid;
+}
+.frontend .content-on footer{
+    width: 100%;height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frontend .content-on footer h1{
+    font-family: 'RocknRoll One', sans-serif;
+    color: #b3b3b3;
+    font-size: 40px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+}
+/*anim for h1 footer*/
+.frontend .content-on  footer h1:before{
+   content:"";
+   width: 100%;
+   height: 100%;
+   background-color: blue;
+   z-index:-1 ;
+   top: 0;left: 0;right: 0;bottom: 0;
+   position:absolute;
+   display: block; 
+   transform: scaleX(0);
+   transition: transform .3s ease;
+   transform-origin: bottom right;
+}
+.frontend .content-on footer h1:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/*End   Style for div front end book*/
+/*Start Style for div page (1)  */
+.frontend .content-off{
+    width: 100%;
+    height: 100%;
+   
+    background-color: white;
+    z-index: -1;
+    transform: rotateY(-180deg);
+    font-family: 'RocknRoll One', sans-serif;
+   
+}
+.frontend .content-off header{
+    width: 100%;height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px black;
+}
+.frontend .content-off header h1 {
+    font-size: 44px;
+    font-family: 'RocknRoll One', sans-serif;
+}
+.frontend .content-off section{
+    margin-top: 40px;
+    height: 90%;
+    width: 100%;
+}
+.frontend .content-off .left{
+    width: 30%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+}
+.frontend .content-off .right{
+    float: left;
+    width: 70%;
+    height: 100%;
+   
+}
+.frontend .content-off  h2{
+   height: 33%;
+   font-size: 44px;
+   font-family: 'RocknRoll One', sans-serif;
+}
+
+/*Start Style for div page (2) about */
+.skills{
+    width:512px; height: 647px;
+    background-color:white;
+    transition: all 5s;
+    margin:10px auto;
+    position: relative;
+    z-index: -1;
+    box-shadow: 10px 20px 30px black;
+   
+}
+.skills header{
+    width: 100%;height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px black;
+}
+.skills section{
+    width: 100%;
+    height: 90%;
+    font-family: 'RocknRoll One', sans-serif;
+    text-align: center;
+}
+.skills section :is(.html,.css,.js){
+    width: 100%;height: 33%;
+}
+.skills section :is(.html,.css,.js) h1{
+    font-size: 44px;
+}
+.skills section :is(.html,.css,.js) .how{
+    margin: auto;
+    width: 90%;
+    height: 40px;
+    border-radius: 20px;
+    background-color:#dbdbdb;
+    
+}
+.skills section .how .much{
+    border-radius: 20px;
+    animation-iteration-count: infinite;
+    background-color: red;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+   
+}
+.skills section .how .much p{
+    font-size: 40px;
+}
+.skills section .html .how .much{
+    animation: html 10s;
+    animation-iteration-count: infinite;
+}
+.skills section .css .how .much{
+    animation: css 10s;
+    animation-iteration-count: infinite;
+}
+
+.skills section .js .how .much{
+    animation: js 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes html {
+    from{ width: 0%;}
+    to{  width: 90%;}
+}
+@keyframes css {
+    from{ width: 0%;}
+    to{  width: 80%;}
+}
+@keyframes js {
+    from{ width: 0%;}
+    to{  width: 80%;}
+}
